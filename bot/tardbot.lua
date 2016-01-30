@@ -4,7 +4,7 @@ package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
 
 require("./bot/utils")
 
-VERSION = '1.0'
+VERSION = '2.1'
 
 -- This function is called when tg receive a msg
 function on_msg_receive (msg)
@@ -216,220 +216,223 @@ function create_config( )
     "stats",
     "anti_spam",
     "owners",
-    "arabic_lock",
     "set",
     "get",
     "broadcast",
     "download_media",
-    "invite",
     "all",
-    "leave_ban",
     "admin"
     },
-    sudo_users = {110626080,103649648,111020322,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {139946685,112524566,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v2 - Open Source
-An advance Administration bot based on yagop/telegram-bot 
-
-https://github.com/SEEDTEAM/TeleSeed
+    about_text = [[TeleTard v2.1
+An advance Administration bot based on Telegram-CLI written in lua
 
 Admins
-@iwals [Founder]
-@imandaneshi [Developer]
-@Rondoozle [Developer]
-@seyedan25 [Manager]
+@ferisystem [Founder]
+@mahdi17177 [Developer]
+@Alirega [Manager]
 
 Special thanks to
-awkward_potato
-Siyanew
-topkecleon
-Vamptacus
+PeymanKhanas
+mahdimasih
+Shdow admin
+
+solve you problem with TeleTard:
+First join Support Group of TeleTard (Persian) : send !join 80263152 to pv of TeleTard
+
+our bots for help this bot
+@TeleTard_Supplement_Bot
+@TeleTard_Kicker_Bot
+@SharingLink_Bot
 
 Our channels
-@teleseedch [English]
-@iranseed [persian]
+@TeleTardCh [Persian]
+@TardTeamCh [Persian]
 ]],
     help_text_realm = [[
 Realm Commands:
 
 !creategroup [Name]
-Create a group
+ساخت گروه
 
 !createrealm [Name]
-Create a realm
+ساخت حوزه
 
 !setname [Name]
-Set realm name
+تغییر اسم 
 
 !setabout [GroupID] [Text]
-Set a group's about text
+تغییر متن درباره گروهی
 
 !setrules [GroupID] [Text]
-Set a group's rules
+تغییر قوانین گروهی
 
 !lock [GroupID] [setting]
-Lock a group's setting
+قفل کردن تنظیماتی از گروهی
 
 !unlock [GroupID] [setting]
-Unock a group's setting
+باز کردن قفل تنظیمات گروهی
 
 !wholist
-Get a list of members in group/realm
+نمایش افراد در گروه
 
 !who
-Get a file of members in group/realm
+نمایش افراد درگروه بصورت فایل 
 
 !type
-Get group type
+نمایش نوع گروه
 
 !kill chat [GroupID]
-Kick all memebers and delete group
+حذف گروهی و حذف افراد آن
 
 !kill realm [RealmID]
-Kick all members and delete realm
+حذف یک حوزه و اعضا آن
 
 !addadmin [id|username]
-Promote an admin by id OR username *Sudo only
+اضافه کردن کسی به ادمین های گلوبال با شناسه یا یوزرنیم
 
 !removeadmin [id|username]
-Demote an admin by id OR username *Sudo only
+حذف کردن کسی از ادمین های گلوبال با شناسه یا یوزرنیم
 
 !list groups
-Get a list of all groups
+لیست گروهایی که ساخته شده تاکنون
 
 !list realms
-Get a list of all realms
+لیست حوزه هایی که ساخته شده تا کنون
 
 !log
-Grt a logfile of current group or realm
+گزارشات گروه یا حوزه
 
 !broadcast [text]
 !broadcast Hello !
-Send text to all groups
-Only sudo users can run this command
+ارسال متن به تمام گروها و حزوه ها
+مخصوص سودوها
 
 !bc [group_id] [text]
 !bc 123456789 Hello !
-This command will send text to [group_id]
-
-
-**U can use both "/" and "!" 
-
-
-*Only admins and sudo can add bots in group
-
-
-*Only admins and sudo can use kick,ban,unban,newlink,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-*Only admins and sudo can use res, setowner, commands
+ارسال متنی به آیدی گروه نامبرده شده
 ]],
-    help_text = [[
-Commands list :
+    help_text = [[لیست دستورات ⚡️TeleTard⚡️  :
+teletard
+توظیحات کامل بات ⚜
 
-!kick [username|id]
-You can also do it by reply
+ver
+ورژن بات و توظیحاتی درباره ان👑
 
-!ban [ username|id]
-You can also do it by reply
+adminlist
+لیست ادمین های گلوبال  جز sudo ها👥
+- - - - - - - - - 
+linkpv 
+ارسال لینک گروه به پی وی👍
 
-!unban [id]
-You can also do it by reply
+newlink
+ساختن لینک جدید🛡
 
-!who
-Members list
+link
+دادن لینک🛡
+- - - - - - - - - 
+kick [username|id]
+برای تنها اخراح کرد فرد مورد نظر ❌
 
-!modlist
-Moderators list
+ban [ username|id]
+برای اخراج کردن دائمی فرد مورد نظر❌
 
-!promote [username]
-Promote someone
+unban [id]
+خارج کردن از اخراج دائمی فرد مورد نظر❌
 
-!demote [username]
-Demote someone
+banlist
+لیست بن شده ها☠
+- - - - - - - - - 
+modlist
+لیست مدیران داخل گروه 🕶
 
-!kickme
-Will kick user
+promote [username]
+مدیر کردن فرد مورد نظر👥
 
-!about
-Group description
+demote [username]
+خارج کردن از مدیرته فرد مورد نظر🔛
+- - - - - - - - - 
+kickme
+پاک کردن شما❌
 
-!setphoto
-Set and locks group photo
+sikme
+پاک کردن شما🚷
+- - - - - - - - - 
+setphoto
+فرستادن عکس گروه و قفل کردن ان🌉
 
-!setname [name]
-Set group name
+setname [name]
+گزاشتن اسم گروه📄
 
-!rules
-Group rules
+set rules <text>
+قرار دادن متن قانون گروه🔰
 
-!id
-return group id or user id
+set about <text>
+قرار دادن متن اطلاعات گروه📣
+- - - - - - - - - 
+lock [member|name|bots]
+قفل کردن [اعضا|اسم|ربات ها] 🔒
 
-!help
+unlock [member|name|photo|bots]
+خارج کردن از قفل [اعضا|اسم|ربات ها]🔓 
+- - - - - - - - - 
+settings
+تنظیمات گروه🛠
+- - - - - - - - - 
+owner
+ایدی مدیر اصلی گروه 👑
 
-!lock [member|name|bots|leave]	
-Locks [member|name|bots|leaveing] 
+setowner [id]
+عوض کردن مدیر اصلی گروه ♻️👑
+- - - - - - - - - 
+setflood [value]
+قرار دادن مقدار پیام تکراری👁‍🗨
+- - - - - - - - - 
+statslist
+مقدار پیام های داده شده در گروه (پیام)📝
+- - - - - - - - - 
+save [value] <text>
+ذخیره کلمه پیش فرض🖌
 
-!unlock [member|name|bots|leave]
-Unlocks [member|name|bots|leaving]
+get [value]
+دادن متن کلمه ی پیش مرض📌
+- - - - - - - - - 
+clean [modlist|rules|about]
+پاک کردن  [مدیران|قانون|اطلاعات]🚽
+- - - - - - - - - 
+res [username]
+دادن ایدی فرد مورد نظر به طور مثال 📎 :
+"res @username"
+- - - - - - - - - 
+id
+ایدی گروه🆔
 
-!set rules <text>
-Set <text> as rules
+help
+لیست راهنمایی📄
 
-!set about <text>
-Set <text> as about
+rules
+قوانین گروه➰
 
-!settings
-Returns group settings
+about
+توظیحات گروه✍
 
-!newlink
-create/revoke your group link
+wholist
+لیست اعضای داخل گروه  👥
 
-!link
-returns group link
+info 
+لیست توظیحات درباره شخص (توجه فقط با ریپلی ان فرد)👁‍🗨
 
-!owner
-returns group owner id
+hello to name
+سلام کردن به شخصی☑️
 
-!setowner [id]
-Will set id as owner
-
-!setflood [value]
-Set [value] as flood sensitivity
-
-!stats
-Simple message statistics
-
-!save [value] <text>
-Save <text> as [value]
-
-!get [value]
-Returns text of [value]
-
-!clean [modlist|rules|about]
-Will clear [modlist|rules|about] and set it to nil
-
-!res [username]
-returns user id
-"!res @username"
-
-!log
-will return group logs
-
-!banlist
-will return group ban list
-
-**U can use both "/" and "!" 
-
-
-*Only owner and mods can add bots in group
-
-
-*Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-*Only owner can use res,setowner,promote,demote and log commands
-
+txt2img <text>
+تبدیل متن به عکس 📝to🌅
+- - - - - - - - - 
+📣  شما میتوانید از ! و / و حتی بدون گزاشتن چیزی استفاده کنید.
+📣  تنها مدیران میتوانند ربات ادد کنند.
+📣 تنها معاونان و مدیران میتوانندجزییات مدیریتی گروه را تغییر دهند.
 ]]
   }
   serialize_to_file(config, './data/config.lua')
