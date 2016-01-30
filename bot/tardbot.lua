@@ -221,6 +221,7 @@ function create_config( )
     "broadcast",
     "download_media",
     "all",
+    "plugins",
     "admin"
     },
     sudo_users = {139946685,112524566,0,tonumber(our_id)},--Sudo users
