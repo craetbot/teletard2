@@ -72,12 +72,19 @@ end
 return {
   patterns = {
     "^[!/](pm) (%d+) (.*)$",
+    "^(pm) (%d+) (.*)$",
     "^[!/](import) (.*)$",
+    "^(import) (.*)$",
     "^[!/](unblock) (%d+)$",
+    "^(unblock) (%d+)$",
     "^[!/](block) (%d+)$",
+    "^(block) (%d+)$",
 	"^[!/](markread) (on)$",
+	"^(markread) (on)$",
 	"^[!/](markread) (off)$",
+	"^(markread) (off)$",
     "^[!/](setbotphoto)$",
+    "^(setbotphoto)$",
 	"%[(photo)%]"
   },
   run = run,
