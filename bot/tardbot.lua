@@ -224,7 +224,7 @@ function create_config( )
     "plugins",
     "admin"
     },
-    sudo_users = {139946685,112524566,0,tonumber(our_id)},--Sudo users
+    sudo_users = {184358948,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[TeleTard v2.1
@@ -254,186 +254,150 @@ Our channels
 ]],
     help_text_realm = [[
 Realm Commands:
-
 !creategroup [Name]
-ساخت گروه
-
+Create a group
 !createrealm [Name]
-ساخت حوزه
-
+Create a realm
 !setname [Name]
-تغییر اسم 
-
+Set realm name
 !setabout [GroupID] [Text]
-تغییر متن درباره گروهی
-
+Set a group's about text
 !setrules [GroupID] [Text]
-تغییر قوانین گروهی
-
+Set a group's rules
 !lock [GroupID] [setting]
-قفل کردن تنظیماتی از گروهی
-
+Lock a group's setting
 !unlock [GroupID] [setting]
-باز کردن قفل تنظیمات گروهی
-
+Unock a group's setting
 !wholist
-نمایش افراد در گروه
-
+Get a list of members in group/realm
 !who
-نمایش افراد درگروه بصورت فایل 
-
+Get a file of members in group/realm
 !type
-نمایش نوع گروه
-
+Get group type
 !kill chat [GroupID]
-حذف گروهی و حذف افراد آن
-
+Kick all memebers and delete group
 !kill realm [RealmID]
-حذف یک حوزه و اعضا آن
-
+Kick all members and delete realm
 !addadmin [id|username]
-اضافه کردن کسی به ادمین های گلوبال با شناسه یا یوزرنیم
-
+Promote an admin by id OR username *Sudo only
 !removeadmin [id|username]
-حذف کردن کسی از ادمین های گلوبال با شناسه یا یوزرنیم
-
+Demote an admin by id OR username *Sudo only
 !list groups
-لیست گروهایی که ساخته شده تاکنون
-
+Get a list of all groups
 !list realms
-لیست حوزه هایی که ساخته شده تا کنون
-
+Get a list of all realms
 !log
-گزارشات گروه یا حوزه
-
+Grt a logfile of current group or realm
 !broadcast [text]
 !broadcast Hello !
-ارسال متن به تمام گروها و حزوه ها
-مخصوص سودوها
-
+Send text to all groups
+Only sudo users can run this command
 !bc [group_id] [text]
 !bc 123456789 Hello !
-ارسال متنی به آیدی گروه نامبرده شده
+This command will send text to [group_id]
+**U can use both "/" and "!" 
+*Only admins and sudo can add bots in group
+*Only admins and sudo can use kick,ban,unban,newlink,setphoto,setname,lock,unlock,set rules,set about and settings commands
+*Only admins and sudo can use res, setowner, commands
 ]],
-    help_text = [[لیست دستورات ⚡️TeleTard⚡️  :
-teletard
-توظیحات کامل بات ⚜
-
-ver
-ورژن بات و توظیحاتی درباره ان👑
-
-adminlist
-لیست ادمین های گلوبال  جز sudo ها👥
-- - - - - - - - - 
-linkpv 
-ارسال لینک گروه به پی وی👍
-
-newlink
-ساختن لینک جدید🛡
-
-link
-دادن لینک🛡
-- - - - - - - - - 
-kick [username|id]
-برای تنها اخراح کرد فرد مورد نظر ❌
-
-ban [ username|id]
-برای اخراج کردن دائمی فرد مورد نظر❌
-
-unban [id]
-خارج کردن از اخراج دائمی فرد مورد نظر❌
-
-banlist
-لیست بن شده ها☠
-- - - - - - - - - 
-modlist
-لیست مدیران داخل گروه 🕶
-
-promote [username]
-مدیر کردن فرد مورد نظر👥
-
-demote [username]
-خارج کردن از مدیرته فرد مورد نظر🔛
-- - - - - - - - - 
-kickme
-پاک کردن شما❌
-
-sikme
-پاک کردن شما🚷
-- - - - - - - - - 
-setphoto
-فرستادن عکس گروه و قفل کردن ان🌉
-
-setname [name]
-گزاشتن اسم گروه📄
-
-set rules <text>
-قرار دادن متن قانون گروه🔰
-
-set about <text>
-قرار دادن متن اطلاعات گروه📣
-- - - - - - - - - 
-lock [member|name|bots]
-قفل کردن [اعضا|اسم|ربات ها] 🔒
-
-unlock [member|name|photo|bots]
-خارج کردن از قفل [اعضا|اسم|ربات ها]🔓 
-- - - - - - - - - 
-settings
-تنظیمات گروه🛠
-- - - - - - - - - 
-owner
-ایدی مدیر اصلی گروه 👑
-
-setowner [id]
-عوض کردن مدیر اصلی گروه ♻️👑
-- - - - - - - - - 
-setflood [value]
-قرار دادن مقدار پیام تکراری👁‍🗨
-- - - - - - - - - 
-statslist
-مقدار پیام های داده شده در گروه (پیام)📝
-- - - - - - - - - 
-save [value] <text>
-ذخیره کلمه پیش فرض🖌
-
-get [value]
-دادن متن کلمه ی پیش مرض📌
-- - - - - - - - - 
-clean [modlist|rules|about]
-پاک کردن  [مدیران|قانون|اطلاعات]🚽
-- - - - - - - - - 
-res [username]
-دادن ایدی فرد مورد نظر به طور مثال 📎 :
-"res @username"
-- - - - - - - - - 
-id
-ایدی گروه🆔
-
-help
-لیست راهنمایی📄
-
-rules
-قوانین گروه➰
-
-about
-توظیحات گروه✍
-
-wholist
-لیست اعضای داخل گروه  👥
-
-info 
-لیست توظیحات درباره شخص (توجه فقط با ریپلی ان فرد)👁‍🗨
-
-hello to name
-سلام کردن به شخصی☑️
-
-txt2img <text>
-تبدیل متن به عکس 📝to🌅
-- - - - - - - - - 
-📣  شما میتوانید از ! و / و حتی بدون گزاشتن چیزی استفاده کنید.
-📣  تنها مدیران میتوانند ربات ادد کنند.
-📣 تنها معاونان و مدیران میتوانندجزییات مدیریتی گروه را تغییر دهند.
+    help_text = [[Commands list :
+!kick [username|id]
+You can also do it by reply
+------------------
+!ban [ username|id]
+You can also do it by reply
+------------------
+!unban [id]
+You can also do it by reply
+------------------
+!who
+Members list
+------------------
+!modlist
+Moderators list
+------------------
+!promote [username]
+Promote someone
+------------------
+!demote [username]
+Demote someone
+------------------
+!kickme
+Will kick user
+------------------
+!about
+Group description
+------------------
+!setphoto
+Set and locks group photo
+------------------
+!setname [name]
+Set group name
+------------------
+!rules
+Group rules
+------------------
+!id
+return group id or user id
+------------------
+!help
+------------------
+!lock [member|name|bots|leave]	
+Locks [member|name|bots|leaveing] 
+------------------
+!unlock [member|name|bots|leave]
+Unlocks [member|name|bots|leaving]
+------------------
+!set rules <text>
+Set <text> as rules
+------------------
+!set about <text>
+Set <text> as about
+------------------
+!settings
+Returns group settings
+------------------
+!newlink
+create/revoke your group link
+------------------
+!link
+returns group link
+------------------
+!owner
+returns group owner id
+------------------
+!setowner [id]
+Will set id as owner
+------------------
+!setflood [value]
+Set [value] as flood sensitivity
+------------------
+!stats
+Simple message statistics
+------------------
+!save [value] <text>
+Save <text> as [value]
+------------------
+!get [value]
+Returns text of [value]
+------------------
+!clean [modlist|rules|about]
+Will clear [modlist|rules|about] and set it to nil
+------------------
+!res [username]
+returns user id
+"!res @username"
+------------------
+!log
+will return group logs
+------------------
+!banlist
+will return group ban list
+------------------
+**U can use both "/" and "!"
+*Only owner and mods can add bots in group
+*Only moderators and owner can use kick,ban
+*Only owner can use res,setowner,promote,demote
 ]]
   }
   serialize_to_file(config, './data/config.lua')
