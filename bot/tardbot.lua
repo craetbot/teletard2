@@ -224,26 +224,18 @@ function create_config( )
     "plugins",
     "admin"
     },
-    sudo_users = {184358948,0,tonumber(our_id)},--Sudo users
+    sudo_users = {184358948,175974206,151244549,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[TeleTard v2.1
+    about_text = [[TeleTir v1
 An advance Administration bot based on Telegram-CLI written in lua
 
 Admins
-@ferisystem [Founder]
-@mahdi17177 [Developer]
-@Alirega [Manager]
+@TeleTir_Support
+@Mrbush
 
-Special thanks to
-PeymanKhanas
-mahdimasih
-Shdow admin
-
-solve you problem with TeleTard:
-First join Support Group of TeleTard (Persian) : send !join 80263152 to pv of TeleTard
-
-our bots for help this bot
+best bot telegram
+@hyperlinks_bot
 @TeleTard_Supplement_Bot
 @TeleTard_Kicker_Bot
 @SharingLink_Bot
