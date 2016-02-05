@@ -224,7 +224,7 @@ function create_config( )
     "plugins",
     "admin"
     },
-    sudo_users = {184358948,175974206,151244549,0,tonumber(our_id)},--Sudo users
+    sudo_users = {184358948,175974206,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[TeleTir v1
